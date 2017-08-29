@@ -1,0 +1,276 @@
+body {
+
+    font-family: "Montserrat", sans-serif !important;
+}
+
+$montserrat: "Montserrat", sans-serif;
+$open-sans: "Open Sans", sans-serif;
+
+/// Mixin to prefix a property
+/// @author Danylo Santoro
+/// @param {String} $property - Property name
+/// @param {*} $value - Property value
+/// @param {List} $prefixes (()) - List of prefixes to print
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  } 
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+.image {
+  display: block;
+  position: relative;
+}
+
+.image img {
+
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+.image.is-square img, 
+.image.is-1by1 img, 
+.image.is-4by3 img, 
+.image.is-3by2 img, 
+.image.is-16by9 img, 
+.image.is-2by1 img {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.image.is-square, .image.is-1by1 {
+
+    padding-top: 100%;
+}
+
+.image.is-4by3 {
+
+  padding-top: 75%;
+}
+
+.image.is-3by2 {
+
+  padding-top: 66.6666%;
+}
+
+.image.is-16by9 {
+
+  padding-top: 56.25%;
+}
+
+.image.is-2by1 {
+
+  padding-top: 50%;
+}
+
+.flex {
+    
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.header {
+
+    @include prefix(align-items, center, webkit moz ms);
+    background-color: white;
+    padding: 25px 0;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+
+    .logo {
+
+        display: block;
+    }
+
+    .navigation {
+
+        @include prefix(align-items, center, webkit moz ms);
+        @include prefix(justify-content, flex-end, webkit moz ms);
+        list-style: none;
+        float: right;
+        width: 100%;
+        margin: 0;
+
+        > li {
+
+        }
+
+        > li:not(last-child) {
+
+            margin-right: 30px;
+        }
+    }
+}
+
+.hero {
+
+    background-color: pink;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    z-index: 10;
+    overflow: hidden;
+
+    .row {
+
+        width: 100%;
+    }
+    
+    .curtain {
+
+        @include prefix(align-items, center, webkit moz ms);
+        @include prefix(justify-content, flex-end, webkit moz ms);
+        position: absolute;
+        z-index: 20;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        h2 {
+
+            font-family: $montserrat;
+            letter-spacing: -1px;
+            font-size: 3.75rem;
+            font-weight: 700;
+            color: white;
+            margin: 0;
+        }
+
+        p {
+
+            font-family: $montserrat;
+            line-height: 1.2;
+            font-weight: 100;
+            font-size: 30px;
+            color: white;
+        }
+    }
+
+    video {
+
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+    }
+}
+
+.btn-default {
+
+    font-family: $montserrat;
+    display: inline-block;
+    margin: 0 10px 10px 0;
+
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 8px 30px;
+    font-weight: 500;
+    font-size: 14px;
+    color: white;
+
+    @include prefix(transition, .3s all , ms moz webkit);
+
+    &:hover {
+
+        background-color: white;
+        text-decoration: none;
+    }
+}
+
+.each-product {
+
+    text-align: center;
+    padding: 0 20px;
+    color: #666666;
+
+    figure {
+
+        margin: 0 auto 30px;
+        max-width: 80px;
+    }
+
+    h3 {
+
+        font-family: $montserrat;
+        margin-bottom: 15px;
+        text-align: center;
+        font-weight: 300;
+        font-size: 30px;
+        line-height: 1.2;
+        padding: 0 20px;
+    }
+
+    p {
+
+        font-family: $open-sans;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .btn-default {
+
+        border: 1px solid #9b9797;
+        color: #9b9797;
+        margin: 0;
+
+        &:hover {
+
+            background-color: #9b9797;
+            color: white;
+        }
+    }
+}
+
+.container {
+
+    padding: 60px 0;
+    width: 100%;
+
+    &.container-gray {
+
+        background-color: #f9f9f9;
+    }
+}
+
+.title {
+
+    font-family: $montserrat;
+    letter-spacing: -1px;
+    font-size: 2.8125rem;
+    color: #666666;
+    font-weight: 600;
+}
+
+.each-competition {
+
+    margin: 0 15px;
+
+    header {
+
+        background-color: red;
+        height: 150px;
+    }
+
+    background-color: pink;
+}
+
+.slick-next:before, .slick-prev:before {
+
+    color: #999999;
+}
