@@ -5,7 +5,7 @@ class Button extends Component {
 
     render(props){
         return(
-            <Link to="" className="btn-default">{ this.props.text }</Link>
+            <Link to="/page" className="btn-default">{ this.props.text }</Link>
         );
     }
 }

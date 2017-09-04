@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import movie from '../images/movie-home.mov';
+import banner from '../images/poster.jpg';
 
 import Button from './Button';
 
@@ -11,7 +12,7 @@ class Hero extends Component {
         return(
 
             <div className="hero">
-                <video autoPlay loop preload="auto">
+                <video poster={ banner } autoPlay loop preload="auto">
                     <source src={ movie } type="video/mp4" />
                 </video>
                 <div className="curtain flex">

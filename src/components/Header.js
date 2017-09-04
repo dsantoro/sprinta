@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 import logo from '../images/logo.jpg';
+import compass from '../images/compass.jpg';
+
+import Button from './Button';
 
 class Header extends Component {
 
@@ -31,10 +34,12 @@ class Header extends Component {
                                 <Link to="cadastre">Cadastre-se</Link>
                             </li>
                             <li>
-                                <Link to="entrar">Entrar</Link>
+                                <Button text="ENTRAR" />
                             </li>
                             <li>
-                                <Link>a</Link>
+                                <Link>
+                                    <img src={ compass } alt=""/>
+                                </Link>
                             </li>
                         </ul>
                     </div>
