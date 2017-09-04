@@ -22,7 +22,7 @@ class Competition extends Component {
 
                         <div className="row flex collapse">
                             <div className="small-4 columns">
-                                <span class="day">23</span>
+                                <span className="day">23</span>
                             </div>
                             <div className="small-8 columns">
                                 <h4>6° Etapa do Circuito Soul de Mountain Bike</h4>

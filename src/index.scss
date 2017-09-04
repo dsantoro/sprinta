@@ -734,9 +734,11 @@ $open-sans: "Open Sans", sans-serif;
 
         .day {
 
+            font-family: $open-sans;
             text-align: center;
-            font-size: 60px;
             color: #999999;
+            font-weight: 300;
+            font-size: 60px;
         }
     }
 }

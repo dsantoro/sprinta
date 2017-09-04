@@ -772,9 +772,11 @@ body {
 }
 
 .each-competition .competition-info .day {
+  font-family: "Open Sans", sans-serif;
   text-align: center;
-  font-size: 60px;
   color: #999999;
+  font-weight: 300;
+  font-size: 60px;
 }
 
 .slick-next,
